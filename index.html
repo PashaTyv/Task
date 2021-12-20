@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+
+<body>
+   <label for="first-numb">Введіть число</label>
+   <input type="text" id="num1" name="first-numb" placeholder="0">
+   <select id="method">
+      <option value="0">+</option>
+      <option value="1">-</option>
+      <option value="2">*</option>
+      <option value="3">/</option>
+   </select>
+   <label for="second-numb">Введіть число</label>
+   <input type="text" id="num2" name="second-numb" placeholder="0">
+   <hr>
+   <input type="submit" onClick="calc();" value="Порахувати"><br /><br />
+   <p id="result">Результат </p>
+
+
+   <script>
+      function plus(a, b) {
+         return (a + b);
+      }
+
+      function minus(a, b) {
+         return (a - b);
+      }
+
+      function multiply(a, b) {
+         return (a * b);
+      }
+
+      function divide(a, b) {
+         return (a / b);
+      }
+
+      function calc() {
+         let result;
+         let numb1 = document.getElementById("num1").value;
+         numb1 = parseInt(numb1);
+         let method = document.getElementById("method").value;
+         let numb2 = document.getElementById("num2").value;
+         numb2 = parseInt(numb2);
+
+
+
+
+         switch (method) {
+            case '0':
+               result = plus(numb1, numb2);
+               document.getElementById("result").innerHTML = result;
+               break;
+            case '1':
+               result = minus(numb1, numb2);
+               document.getElementById("result").innerHTML = result;
+               break;
+            case '2':
+               result = multiply(numb1, numb2);
+               document.getElementById("result").innerHTML = Math.round(result);
+               break;
+            case '3':
+               result = divide(numb1, numb2);
+               document.getElementById("result").innerHTML = Math.round(result);
+               break;
+            default:
+               w = "Не знаю";
+         }
+
+      }
+   </script>
+
+</body>
+
+</html>
